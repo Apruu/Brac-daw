@@ -1,0 +1,428 @@
+:root {
+    --dark-gray: #1A202C; /* Fondo principal */
+    --light-text: #E2E8F0; /* Color de texto principal */
+    --accent-red: #E53E3E; /* Rojo de acento */
+    --mid-gray: #2D3748; /* Fondo de secciones */
+    --deep-gray: #171923; /* Fondo de contenedores y footer */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --font-primary: 'Inter', sans-serif;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 1.6rem; 
+    background-color: var(--dark-gray);
+    color: var(--light-text);
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    color: var(--accent-red);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------- */
+/* UTILITIES */
+/* -------------------- */
+.contenedor {
+    max-width: 120rem; 
+    margin: 0 auto;
+    padding: 0 2rem; 
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px var(--shadow-color);
+    background-color: var(--mid-gray);
+    padding: 3rem;
+    border-radius: 1rem;
+    border-left: 4px solid rgba(229, 62, 62, 0.5); 
+    margin-bottom: 4rem;
+    scroll-margin-top: 5rem;
+}
+
+.bg-fondo-gray {
+    background-color: var(--deep-gray);
+}
+
+.titulo {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+/* -------------------- */
+/* HEADER Y NAVEGACIÓN */
+/* -------------------- */
+header {
+    background-color: var(--dark-gray);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(229, 62, 62, 0.3);
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #A0AEC0; 
+}
+
+.nav-bg {
+    background-color: rgba(45, 55, 72, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1.5rem 0;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0; 
+    }
+    .nav-bg {
+        background-color: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        display: flex; 
+        gap: 2rem;
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal a {
+        display: flex; 
+        padding: 0.8rem 1.5rem; 
+        background-color: rgba(45, 55, 72, 0.8);
+        border-radius: 0.5rem; 
+    }
+}
+
+
+.navegacion-principal a:hover {
+    color: var(--accent-red);
+}
+
+.icono {
+    width: 20px !important; /* Se usa para asegurar que los iconos del menú mantengan siempre este tamaño */
+    height: 20px; 
+    vertical-align: middle;
+    margin-right: 8px; 
+}
+
+/* ------------------ */
+/* SECCIÓN SINOPSIS */
+/* ------------------ */
+.sinopsis-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+    .sinopsis-contenido {
+        flex-direction: row;
+        gap: 3rem;
+    }
+    .sinopsis-contenido > div {
+        flex: 2; 
+    }
+    .sinopsis-contenido > .imagen-contenedor {
+        flex: 1;
+    }
+}
+
+.imagen-contenedor {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-contenedor img {
+    border-radius: 0.8rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    max-width: 35rem; 
+    transition: transform 0.5s ease;
+}
+
+.imagen-contenedor img:hover {
+    transform: scale(1.02);
+}
+
+/* -------------------- */
+/* SECCIÓN PERSONAJES */
+/* -------------------- */
+.personajes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+    .personajes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .personajes-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.personaje-card {
+    background-color: var(--mid-gray);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.personaje-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+.personaje-card img {
+    width: 9.6rem; 
+    height: 9.6rem; 
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    border: 2px solid var(--accent-red);
+}
+
+.personaje-card p {
+    font-size: 1.4rem;
+    color: #A0AEC0; 
+}
+
+/* --------------------------- */
+/* SECCIÓN EPISODIOS - TABLAS */
+/* --------------------------- */
+.episodios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .episodios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background-color: var(--deep-gray);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.tabla-contenedor h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #4A5568; 
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla thead {
+    background-color: #4A5568;
+}
+
+.tabla th {
+    padding: 1rem 1.6rem;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tabla tbody tr {
+    border-bottom: 1px solid #2D3748;
+    transition: background-color 0.15s ease;
+}
+
+.tabla tbody tr:hover {
+    background-color: rgba(74, 85, 104, 0.5);
+}
+
+.tabla td {
+    padding: 1rem 1.6rem;
+    white-space: nowrap;
+    font-size: 1.5rem;
+}
+
+.tabla th:last-child, 
+.tabla td:last-child {
+    text-align: right;
+}
+
+/* ------------ */
+/* FORMULARIO */
+/* ------------ */
+.formulario {
+    max-width: 50rem; 
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 1px solid #4A5568; 
+    padding: 3rem;
+    border-radius: 0.8rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.5); 
+}
+
+.formulario legend {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0 0.8rem;
+    color: var(--accent-red);
+}
+
+.contenedor-campos {
+    display: grid;
+    gap: 1.6rem;
+}
+
+.campo label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #A0AEC0; 
+    margin-bottom: 0.4rem;
+}
+
+.input-text {
+    width: 100%;
+    padding: 1rem 1.6rem;
+    background-color: var(--mid-gray);
+    border: 1px solid #4A5568; 
+    border-radius: 0.5rem;
+    color: var(--light-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-text::placeholder {
+    color: #718096; 
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.5);
+}
+
+.campo textarea {
+    height: 10rem;
+    resize: none;
+}
+
+.enviar {
+    display: flex;
+    gap: 1.6rem;
+    padding-top: 2rem;
+}
+
+/* Botones */
+.boton {
+    padding: 1rem 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.enviar input[type="submit"] {
+    flex: 1;
+    background-color: var(--accent-red);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+.enviar input[type="submit"]:hover {
+    background-color: #C53030;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+}
+
+.enviar input[type="reset"] {
+    flex: 1;
+    background-color: #4A5568; 
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+.enviar input[type="reset"]:hover {
+    background-color: #2D3748;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* -------- */
+/* FOOTER */
+/* -------- */
+.footer {
+    background-color: var(--deep-gray);
+    margin-top: 4rem;
+    padding: 1.6rem 0;
+    border-top: 1px solid rgba(229, 62, 62, 0.3);
+}
+
+.footer p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #A0AEC0; 
+}
+
