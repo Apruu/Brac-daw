@@ -1,0 +1,128 @@
+/* Selector de tipo: se aplica a todo el body */
+body {
+    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.carta {
+    background: #b5b5b5;
+    width: 350px;
+    padding: 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#nombre {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.foto {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 3px 3px 3px 3px;
+    border: 3px solid whitesmoke;
+}
+
+.bio {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* Lista */
+.lista {
+    padding: 0;
+    margin:5px 5px 5px 5px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    column-gap: 10px;
+}
+
+.lista li {
+    margin: 5px 5px 5px 5px;
+}
+
+.listado {
+    margin:5px 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 480px) {
+    .carta {
+        width: 95%;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    #nombre {
+        font-size: 22px;
+    }
+
+    .lista {
+        grid-template-columns: 1fr ;
+        width: 100%;
+    }
+
+    .foto {
+        width: 150px;
+        border-radius: 50%;
+    }
+}
+
+.boton img{
+    vertical-align: middle;
+   
+}
+
+/* Botón con pseudo-clase :hover */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Pseudo-clase */
+.boton:hover {
+    background-color: #4b7bec;
+    color: white;
+    transform: scale(1.05);
+}
+
+@media (max-width: 720px) {
+
+    .carta {
+        width: 80%;
+    }
+
+    #nombre {
+        font-size: 24px;
+    }
+
+    .bio {
+        font-size: 12px;
+    }
+
+    .lista {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carta {
+        width: 500px;
+    }
+}

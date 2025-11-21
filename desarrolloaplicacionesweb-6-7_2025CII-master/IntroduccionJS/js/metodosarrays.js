@@ -26,7 +26,5 @@ numeros.splice(2, 2);//elimina desde el indice indicado antes de la coma, despue
 //Spread operator -> recomendada
 const nuevosNumeros = [100, 200,...numeros, 10];//buena practica ya que no modificamos el arreglo original
 
-
-
 console.table(numeros);
 console.table(nuevosNumeros);
